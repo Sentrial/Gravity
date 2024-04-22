@@ -1,0 +1,290 @@
+[gd_scene load_steps=15 format=3 uid="uid://dos7srpvccnwr"]
+
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_22v5v"]
+[ext_resource type="Texture2D" uid="uid://cq17gmqbewcvn" path="res://Assets/GravityBackground.jpg" id="2_lydyi"]
+[ext_resource type="PackedScene" uid="uid://bj0anesk420fh" path="res://Objects/BlackHole.tscn" id="3_2rmon"]
+[ext_resource type="PackedScene" uid="uid://ttdk2fpj31cl" path="res://Objects/WormHoles/wormHoleIn-Red.tscn" id="3_s1kah"]
+[ext_resource type="PackedScene" uid="uid://cpf4gdi3xoben" path="res://Objects/WhiteHole.tscn" id="4_ertvb"]
+[ext_resource type="PackedScene" uid="uid://cvnsrxgm57w7v" path="res://Objects/WormHoles/wormHoleOut-Red.tscn" id="4_n7mgc"]
+[ext_resource type="PackedScene" uid="uid://011dx0h3kps0" path="res://Objects/Asteroids/Asteroid_1.tscn" id="5_t348p"]
+[ext_resource type="PackedScene" uid="uid://b4x5ct8uww1o3" path="res://Objects/Asteroids/Asteroid_2.tscn" id="6_3y3n1"]
+[ext_resource type="PackedScene" uid="uid://c0mxc1dau1dnr" path="res://Objects/Asteroids/Asteroid_3.tscn" id="7_4tc8l"]
+[ext_resource type="PackedScene" uid="uid://b5x5gbb6cobld" path="res://Player/Player.tscn" id="8_0kkuy"]
+[ext_resource type="PackedScene" uid="uid://cwqgbptrenebh" path="res://Objects/Finish.tscn" id="9_3lvls"]
+[ext_resource type="Texture2D" uid="uid://cxm4b2reyftk8" path="res://Assets/CompletedBox.png" id="10_kl5ea"]
+[ext_resource type="Texture2D" uid="uid://llvf1wotmnqn" path="res://Assets/BlackHole2.png" id="11_wnrhp"]
+[ext_resource type="PackedScene" uid="uid://be0erdvxnlby3" path="res://Objects/Border.tscn" id="12_war2o"]
+
+[node name="Level_27" type="Node2D"]
+script = ExtResource("1_22v5v")
+
+[node name="GravityBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("2_lydyi")
+
+[node name="WormHoles" type="Node2D" parent="."]
+
+[node name="Pair1" type="Node2D" parent="WormHoles"]
+
+[node name="WormHoleIn" parent="WormHoles/Pair1" instance=ExtResource("3_s1kah")]
+position = Vector2(1093, 560)
+rotation = 1.5708
+
+[node name="WormHoleOut" parent="WormHoles/Pair1" instance=ExtResource("4_n7mgc")]
+position = Vector2(1056, 208)
+rotation = -1.5708
+
+[node name="BlackHoles" type="Node2D" parent="."]
+
+[node name="BlackHole" parent="BlackHoles" instance=ExtResource("3_2rmon")]
+position = Vector2(646, 94)
+
+[node name="WhiteHoles" type="Node2D" parent="."]
+
+[node name="WhiteHole" parent="WhiteHoles" instance=ExtResource("4_ertvb")]
+position = Vector2(640, 560)
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="Asteroid_1" parent="Asteroids" instance=ExtResource("5_t348p")]
+position = Vector2(50, 360)
+rotation = 1.5708
+
+[node name="Asteroid_2" parent="Asteroids" instance=ExtResource("6_3y3n1")]
+position = Vector2(149, 362)
+rotation = 1.5708
+
+[node name="Asteroid_3" parent="Asteroids" instance=ExtResource("5_t348p")]
+position = Vector2(251, 362)
+rotation = 1.5708
+
+[node name="Asteroid_4" parent="Asteroids" instance=ExtResource("6_3y3n1")]
+position = Vector2(351, 363)
+rotation = 1.5708
+
+[node name="Asteroid_5" parent="Asteroids" instance=ExtResource("7_4tc8l")]
+position = Vector2(458, 362)
+rotation = -1.5112
+
+[node name="Asteroid_6" parent="Asteroids" instance=ExtResource("5_t348p")]
+position = Vector2(579, 361)
+rotation = 1.5708
+
+[node name="Asteroid_7" parent="Asteroids" instance=ExtResource("7_4tc8l")]
+position = Vector2(688, 364)
+rotation = -1.49294
+
+[node name="Asteroid_8" parent="Asteroids" instance=ExtResource("7_4tc8l")]
+position = Vector2(909, 367)
+rotation = -1.58734
+
+[node name="Asteroid_9" parent="Asteroids" instance=ExtResource("5_t348p")]
+position = Vector2(806, 365)
+rotation = 1.5708
+
+[node name="Asteroid_10" parent="Asteroids" instance=ExtResource("7_4tc8l")]
+position = Vector2(1135, 360)
+rotation = -4.67167
+
+[node name="Asteroid_11" parent="Asteroids" instance=ExtResource("5_t348p")]
+position = Vector2(1025, 363)
+rotation = -1.49702
+
+[node name="Asteroid_12" parent="Asteroids" instance=ExtResource("6_3y3n1")]
+position = Vector2(1233, 359)
+rotation = 1.5708
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("8_0kkuy")]
+position = Vector2(223, 560)
+
+[node name="Finish" parent="." instance=ExtResource("9_3lvls")]
+position = Vector2(226, 209)
+
+[node name="Instructions" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 240.0
+offset_top = 600.0
+offset_right = 1040.0
+offset_bottom = 700.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 190.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 40
+text = "MENU"
+
+[node name="ResetButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1100.0
+offset_top = 30.0
+offset_right = 1250.0
+offset_bottom = 105.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "RESET"
+
+[node name="FlipGravityButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 900.0
+offset_top = 625.0
+offset_right = 1250.0
+offset_bottom = 700.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "INVERT GRAVITY"
+
+[node name="NextLevelButton" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 515.0
+offset_top = 600.0
+offset_right = 765.0
+offset_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "NEXT LEVEL"
+
+[node name="CompletedGroup" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="CompletedBox" type="Sprite2D" parent="CompletedGroup"]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(640, 360)
+scale = Vector2(0.6, 0.4)
+texture = ExtResource("10_kl5ea")
+
+[node name="Time" type="Label" parent="CompletedGroup"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 385.0
+offset_top = 220.0
+offset_right = 585.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "TIME:"
+vertical_alignment = 1
+
+[node name="Speed" type="Label" parent="CompletedGroup"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 385.0
+offset_top = 375.0
+offset_right = 585.0
+offset_bottom = 475.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "SPEED:"
+vertical_alignment = 1
+
+[node name="TimeValue" type="Label" parent="CompletedGroup"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 500.0
+offset_top = 220.0
+offset_right = 900.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpeedValue" type="Label" parent="CompletedGroup"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 500.0
+offset_top = 375.0
+offset_right = 900.0
+offset_bottom = 475.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpawnableBlackHoles" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="SpawnableBlackHoles"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpawnableBlackHoles"]
+position = Vector2(65, 652)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_wnrhp")
+
+[node name="SpawnableBHBox" type="Sprite2D" parent="SpawnableBlackHoles"]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(104, 650)
+scale = Vector2(0.196, 0.131)
+texture = ExtResource("10_kl5ea")
+
+[node name="SpawnBHCount" type="Label" parent="SpawnableBlackHoles"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 599.0
+offset_right = 183.0
+offset_bottom = 699.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = ": 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Border" parent="Borders" instance=ExtResource("12_war2o")]
+position = Vector2(640, -170)
+
+[node name="Border2" parent="Borders" instance=ExtResource("12_war2o")]
+position = Vector2(1510, 360)
+rotation = 1.5708
+
+[node name="Border3" parent="Borders" instance=ExtResource("12_war2o")]
+position = Vector2(640, 880)
+
+[node name="Border4" parent="Borders" instance=ExtResource("12_war2o")]
+position = Vector2(-200, 360)
+rotation = 1.5708
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 549.0
+offset_top = 26.0
+offset_right = 761.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "LEVEL 27"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="FlipGravityButton" to="." method="_on_flip_gravity_button_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

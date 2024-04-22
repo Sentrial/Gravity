@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba0m236lx77pw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxwa1"]
+
+[node name="Y" type="RigidBody2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 100
+text = "Y"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jxwa1")

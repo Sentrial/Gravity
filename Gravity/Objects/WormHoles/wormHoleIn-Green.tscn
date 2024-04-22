@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmug83k5jckiu"]
+
+[ext_resource type="Script" path="res://Objects/WormHoles/wormHoleIn.gd" id="1_kn0o1"]
+[ext_resource type="Texture2D" uid="uid://w1kp1i6cv5sn" path="res://Assets/Wormhole-GreenIn3.png" id="2_gwb6x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tedww"]
+radius = 35.0
+
+[node name="WormHoleIn" type="Area2D"]
+script = ExtResource("1_kn0o1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tedww")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 25)
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_gwb6x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdmdievfheirf"]
+
+[ext_resource type="Texture2D" uid="uid://btjumu8t1c8km" path="res://Assets/WhiteSmudge.png" id="1_pbm8t"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y2v0n"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_nmkwm"]
+offsets = PackedFloat32Array(0, 0.122302, 0.841727, 0.989209)
+colors = PackedColorArray(1, 0.466667, 0.698039, 0.129412, 1, 0.466667, 0.698039, 0.784314, 0.882353, 0, 0.811765, 0.784314, 0.882353, 0, 0.811765, 0.0784314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dmb25"]
+gradient = SubResource("Gradient_nmkwm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dwrrb"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 20.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.01
+scale_max = 0.1
+color_ramp = SubResource("GradientTexture1D_dmb25")
+
+[node name="TrailPink" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_y2v0n")
+rotation = 0.00435257
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_dwrrb")
+texture = ExtResource("1_pbm8t")

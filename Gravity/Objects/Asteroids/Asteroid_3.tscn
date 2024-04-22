@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0mxc1dau1dnr"]
+
+[ext_resource type="Script" path="res://Objects/Asteroids/Asteroid.gd" id="1_8e784"]
+[ext_resource type="Texture2D" uid="uid://bl8a7kjsfhnyh" path="res://Assets/Asteroid3.png" id="2_ry3fx"]
+[ext_resource type="PackedScene" uid="uid://btudkebtwfc2g" path="res://Particles/explosionParticle.tscn" id="3_rrgeu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rv82x"]
+radius = 18.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sb54y"]
+radius = 22.0
+height = 90.0
+
+[node name="Asteroid_3" type="Area2D"]
+script = ExtResource("1_8e784")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, -22)
+rotation = -1.33227
+shape = SubResource("CapsuleShape2D_rv82x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(4, 6)
+shape = SubResource("CapsuleShape2D_sb54y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+rotation = -0.785398
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ry3fx")
+
+[node name="Explosion" parent="." instance=ExtResource("3_rrgeu")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

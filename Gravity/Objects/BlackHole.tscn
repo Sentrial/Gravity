@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj0anesk420fh"]
+
+[ext_resource type="Texture2D" uid="uid://llvf1wotmnqn" path="res://Assets/BlackHole2.png" id="1_yu05l"]
+
+[node name="BlackHole" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_yu05l")

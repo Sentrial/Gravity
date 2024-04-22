@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4fcknw3lxpjc"]
+
+[ext_resource type="Texture2D" uid="uid://b88gtrevwna07" path="res://Assets/Wormhole-BlueOut3.png" id="1_xxm0t"]
+
+[node name="WormHoleOut" type="Sprite2D"]
+position = Vector2(0, 25)
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_xxm0t")

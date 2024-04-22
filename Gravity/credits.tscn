@@ -1,0 +1,134 @@
+[gd_scene load_steps=3 format=3 uid="uid://rd3so7bqg8y5"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_snfvc"]
+[ext_resource type="Texture2D" uid="uid://cq17gmqbewcvn" path="res://Assets/GravityBackground.jpg" id="2_a2cyu"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_snfvc")
+
+[node name="GravityBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 359)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("2_a2cyu")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 440.0
+offset_top = 15.0
+offset_right = 840.0
+offset_bottom = 165.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 553.0
+offset_top = 620.0
+offset_right = 728.0
+offset_bottom = 695.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "MENU"
+metadata/_edit_use_anchors_ = true
+
+[node name="Personal" type="Node2D" parent="."]
+
+[node name="Brandon" type="Label" parent="Personal"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 40.0
+offset_top = 45.0
+offset_right = 440.0
+offset_bottom = 495.001
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Developed by
+Brandon McCarthy
+\"Sentrial\"
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WebsiteButton" type="Button" parent="Personal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = 375.0
+offset_right = 325.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "WEBSITE"
+metadata/_edit_use_anchors_ = true
+
+[node name="YoutubeButton" type="Button" parent="Personal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = 485.0
+offset_right = 325.0
+offset_bottom = 560.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "YouTube
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="License" type="Node2D" parent="."]
+
+[node name="Godot" type="Label" parent="License"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 450.0
+offset_top = 150.0
+offset_right = 1301.38
+offset_bottom = 600.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 15
+text = "This game uses Godot Engine, available under the following license:
+
+Copyright (c) 2014-present Godot Engine contributors. Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE 
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Personal/WebsiteButton" to="." method="_on_website_button_pressed"]
+[connection signal="pressed" from="Personal/YoutubeButton" to="." method="_on_youtube_button_pressed"]

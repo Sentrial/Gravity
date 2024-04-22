@@ -1,0 +1,247 @@
+[gd_scene load_steps=17 format=3 uid="uid://c2vvrex146a40"]
+
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_r1jiy"]
+[ext_resource type="Texture2D" uid="uid://cq17gmqbewcvn" path="res://Assets/GravityBackground.jpg" id="2_5wnhj"]
+[ext_resource type="PackedScene" uid="uid://011dx0h3kps0" path="res://Objects/Asteroids/Asteroid_1.tscn" id="3_b6ij5"]
+[ext_resource type="PackedScene" uid="uid://ttdk2fpj31cl" path="res://Objects/WormHoles/wormHoleIn-Red.tscn" id="3_ommlk"]
+[ext_resource type="PackedScene" uid="uid://b4x5ct8uww1o3" path="res://Objects/Asteroids/Asteroid_2.tscn" id="4_2m5ou"]
+[ext_resource type="PackedScene" uid="uid://cvnsrxgm57w7v" path="res://Objects/WormHoles/wormHoleOut-Red.tscn" id="4_fgehm"]
+[ext_resource type="PackedScene" uid="uid://c0mxc1dau1dnr" path="res://Objects/Asteroids/Asteroid_3.tscn" id="5_0xcot"]
+[ext_resource type="PackedScene" uid="uid://dpweyjy2squtl" path="res://Objects/WormHoles/wormHoleIn-Blue.tscn" id="5_io3hd"]
+[ext_resource type="PackedScene" uid="uid://c4fcknw3lxpjc" path="res://Objects/WormHoles/wormHoleOut-Blue.tscn" id="6_jjd7u"]
+[ext_resource type="PackedScene" uid="uid://b5x5gbb6cobld" path="res://Player/Player.tscn" id="6_m20wk"]
+[ext_resource type="PackedScene" uid="uid://cmug83k5jckiu" path="res://Objects/WormHoles/wormHoleIn-Green.tscn" id="7_50jfs"]
+[ext_resource type="PackedScene" uid="uid://cwqgbptrenebh" path="res://Objects/Finish.tscn" id="7_cj0fy"]
+[ext_resource type="PackedScene" uid="uid://nig60n33igs" path="res://Objects/WormHoles/wormHoleOut-Green.tscn" id="8_bwctw"]
+[ext_resource type="Texture2D" uid="uid://cxm4b2reyftk8" path="res://Assets/CompletedBox.png" id="8_xohen"]
+[ext_resource type="Texture2D" uid="uid://llvf1wotmnqn" path="res://Assets/BlackHole2.png" id="9_hsjoa"]
+[ext_resource type="PackedScene" uid="uid://be0erdvxnlby3" path="res://Objects/Border.tscn" id="10_0sitd"]
+
+[node name="Level_23" type="Node2D"]
+script = ExtResource("1_r1jiy")
+
+[node name="GravityBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("2_5wnhj")
+
+[node name="WormHoles" type="Node2D" parent="."]
+
+[node name="Pair1" type="Node2D" parent="WormHoles"]
+
+[node name="WormHoleIn" parent="WormHoles/Pair1" instance=ExtResource("3_ommlk")]
+position = Vector2(650, 159)
+rotation = -0.610865
+
+[node name="WormHoleIn2" parent="WormHoles/Pair1" instance=ExtResource("3_ommlk")]
+position = Vector2(303, 282)
+rotation = 1.5708
+
+[node name="WormHoleOut" parent="WormHoles/Pair1" instance=ExtResource("4_fgehm")]
+position = Vector2(995, 580)
+rotation = 0.785398
+
+[node name="Pair2" type="Node2D" parent="WormHoles"]
+
+[node name="WormHoleIn" parent="WormHoles/Pair2" instance=ExtResource("5_io3hd")]
+position = Vector2(900, 78)
+rotation = 2.35619
+
+[node name="WormHoleOut" parent="WormHoles/Pair2" instance=ExtResource("6_jjd7u")]
+position = Vector2(306, 516)
+
+[node name="Pair3" type="Node2D" parent="WormHoles"]
+
+[node name="WormHoleIn" parent="WormHoles/Pair3" instance=ExtResource("7_50jfs")]
+position = Vector2(696, 472)
+rotation = 0.523599
+
+[node name="WormHoleOut" parent="WormHoles/Pair3" instance=ExtResource("8_bwctw")]
+position = Vector2(992, 154)
+rotation = 2.26893
+
+[node name="BlackHoles" type="Node2D" parent="."]
+
+[node name="WhiteHoles" type="Node2D" parent="."]
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="Asteroid_1" parent="Asteroids" instance=ExtResource("3_b6ij5")]
+position = Vector2(1000, 279)
+rotation = 1.5708
+
+[node name="Asteroid_2" parent="Asteroids" instance=ExtResource("4_2m5ou")]
+position = Vector2(1004, 365)
+rotation = 1.5708
+
+[node name="Asteroid_3" parent="Asteroids" instance=ExtResource("5_0xcot")]
+position = Vector2(1000, 453)
+rotation = -1.58897
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("6_m20wk")]
+position = Vector2(420, 285)
+
+[node name="Finish" parent="." instance=ExtResource("7_cj0fy")]
+position = Vector2(1184, 362)
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 190.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 40
+text = "MENU"
+
+[node name="ResetButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1100.0
+offset_top = 30.0
+offset_right = 1250.0
+offset_bottom = 105.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "RESET"
+
+[node name="NextLevelButton" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 515.0
+offset_top = 600.0
+offset_right = 765.0
+offset_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "NEXT LEVEL"
+
+[node name="CompletedGroup" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="CompletedBox" type="Sprite2D" parent="CompletedGroup"]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(640, 360)
+scale = Vector2(0.6, 0.4)
+texture = ExtResource("8_xohen")
+
+[node name="Time" type="Label" parent="CompletedGroup"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 385.0
+offset_top = 220.0
+offset_right = 585.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "TIME:"
+vertical_alignment = 1
+
+[node name="Speed" type="Label" parent="CompletedGroup"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 385.0
+offset_top = 375.0
+offset_right = 585.0
+offset_bottom = 475.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "SPEED:"
+vertical_alignment = 1
+
+[node name="TimeValue" type="Label" parent="CompletedGroup"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 500.0
+offset_top = 220.0
+offset_right = 900.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpeedValue" type="Label" parent="CompletedGroup"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 500.0
+offset_top = 375.0
+offset_right = 900.0
+offset_bottom = 475.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpawnableBlackHoles" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="SpawnableBlackHoles"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpawnableBlackHoles"]
+position = Vector2(65, 652)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_hsjoa")
+
+[node name="SpawnableBHBox" type="Sprite2D" parent="SpawnableBlackHoles"]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(104, 650)
+scale = Vector2(0.196, 0.131)
+texture = ExtResource("8_xohen")
+
+[node name="SpawnBHCount" type="Label" parent="SpawnableBlackHoles"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 599.0
+offset_right = 183.0
+offset_bottom = 699.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = ": 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 530.0
+offset_top = 25.0
+offset_right = 750.0
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "LEVEL 23"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Border" parent="Borders" instance=ExtResource("10_0sitd")]
+position = Vector2(640, -170)
+
+[node name="Border2" parent="Borders" instance=ExtResource("10_0sitd")]
+position = Vector2(1510, 360)
+rotation = 1.5708
+
+[node name="Border3" parent="Borders" instance=ExtResource("10_0sitd")]
+position = Vector2(640, 880)
+
+[node name="Border4" parent="Borders" instance=ExtResource("10_0sitd")]
+position = Vector2(-200, 360)
+rotation = 1.5708
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

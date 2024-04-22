@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=3 uid="uid://blw6vx0ls8qwr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_vuixo"]
+[ext_resource type="PackedScene" uid="uid://bj0anesk420fh" path="res://Objects/BlackHole.tscn" id="2_8js0r"]
+[ext_resource type="Texture2D" uid="uid://cq17gmqbewcvn" path="res://Assets/GravityBackground.jpg" id="2_v2d1q"]
+[ext_resource type="PackedScene" uid="uid://boeav2h6may3g" path="res://Objects/TitleLetters/G.tscn" id="4_7csex"]
+[ext_resource type="PackedScene" uid="uid://tmcxousqclms" path="res://Objects/TitleLetters/R.tscn" id="5_wwqnf"]
+[ext_resource type="PackedScene" uid="uid://bfegai5170b3i" path="res://Objects/TitleLetters/A.tscn" id="6_ese84"]
+[ext_resource type="PackedScene" uid="uid://b5kbq0d556lga" path="res://Objects/TitleLetters/V.tscn" id="7_e8q4l"]
+[ext_resource type="PackedScene" uid="uid://cdrlh614a81jd" path="res://Objects/TitleLetters/I.tscn" id="8_vwn3u"]
+[ext_resource type="PackedScene" uid="uid://qpxtgwx5iexr" path="res://Objects/TitleLetters/T.tscn" id="9_twm2a"]
+[ext_resource type="PackedScene" uid="uid://ba0m236lx77pw" path="res://Objects/TitleLetters/Y.tscn" id="10_yifq4"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_vuixo")
+
+[node name="GravityBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 359)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("2_v2d1q")
+
+[node name="BlackHoles" type="Node2D" parent="."]
+
+[node name="BlackHole" parent="BlackHoles" instance=ExtResource("2_8js0r")]
+
+[node name="CreditsButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1095.0
+offset_top = 635.0
+offset_right = 1270.0
+offset_bottom = 710.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "CREDITS"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 165.0
+offset_top = 475.0
+offset_right = 365.0
+offset_bottom = 575.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelsButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 415.0
+offset_top = 475.0
+offset_right = 615.0
+offset_bottom = 575.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "LEVELS"
+metadata/_edit_use_anchors_ = true
+
+[node name="SkinsButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 665.0
+offset_top = 475.0
+offset_right = 865.0
+offset_bottom = 575.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "SKINS"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 915.0
+offset_top = 475.0
+offset_right = 1115.0
+offset_bottom = 575.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Node2D" parent="."]
+
+[node name="G" parent="Title" instance=ExtResource("4_7csex")]
+position = Vector2(415, 300)
+
+[node name="R" parent="Title" instance=ExtResource("5_wwqnf")]
+position = Vector2(490, 300)
+
+[node name="A" parent="Title" instance=ExtResource("6_ese84")]
+position = Vector2(565, 300)
+
+[node name="V" parent="Title" instance=ExtResource("7_e8q4l")]
+position = Vector2(640, 300)
+
+[node name="I" parent="Title" instance=ExtResource("8_vwn3u")]
+position = Vector2(715, 300)
+
+[node name="T" parent="Title" instance=ExtResource("9_twm2a")]
+position = Vector2(790, 300)
+
+[node name="Y" parent="Title" instance=ExtResource("10_yifq4")]
+position = Vector2(865, 300)
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="LevelsButton" to="." method="_on_levels_button_pressed"]
+[connection signal="pressed" from="SkinsButton" to="." method="_on_skins_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5x5gbb6cobld"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_yf1kk"]
+[ext_resource type="Texture2D" uid="uid://dgchh3xc745k5" path="res://Assets/GravityPlayerMeteor.png" id="2_00j05"]
+[ext_resource type="PackedScene" uid="uid://d1074ia854cfd" path="res://Particles/trailMeteor.tscn" id="2_j8rbo"]
+[ext_resource type="PackedScene" uid="uid://cf7i1wl8p4tra" path="res://Particles/trailComet.tscn" id="4_n8kh4"]
+[ext_resource type="PackedScene" uid="uid://iqv3e4uxiqre" path="res://Particles/trailFire.tscn" id="5_bh3bx"]
+[ext_resource type="PackedScene" uid="uid://bdmdievfheirf" path="res://Particles/trailPink.tscn" id="6_51044"]
+[ext_resource type="PackedScene" uid="uid://btudkebtwfc2g" path="res://Particles/explosionParticle.tscn" id="6_lv6qm"]
+[ext_resource type="AudioStream" uid="uid://cshogccfhlp8a" path="res://Assets/SFX/wormholeSFX.wav" id="8_32y70"]
+[ext_resource type="AudioStream" uid="uid://bxrcxroi5h010" path="res://Assets/SFX/earthImpact.mp3" id="9_ou7j1"]
+[ext_resource type="AudioStream" uid="uid://ccs2gida8vqjj" path="res://Assets/SFX/explosion2.mp3" id="10_ocsy2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqab6"]
+
+[node name="Player" type="RigidBody2D"]
+script = ExtResource("1_yf1kk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_aqab6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_00j05")
+
+[node name="Trails" type="Node2D" parent="."]
+
+[node name="0" parent="Trails" instance=ExtResource("2_j8rbo")]
+emitting = false
+
+[node name="1" parent="Trails" instance=ExtResource("4_n8kh4")]
+emitting = false
+
+[node name="2" parent="Trails" instance=ExtResource("5_bh3bx")]
+emitting = false
+
+[node name="3" parent="Trails" instance=ExtResource("6_51044")]
+emitting = false
+
+[node name="Explosion" parent="." instance=ExtResource("6_lv6qm")]
+
+[node name="popSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_32y70")
+
+[node name="impactSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ou7j1")
+
+[node name="deathSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ocsy2")
+volume_db = -10.0
+pitch_scale = 0.7

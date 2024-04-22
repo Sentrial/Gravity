@@ -1,0 +1,236 @@
+[gd_scene load_steps=20 format=3 uid="uid://bp8nge1p21qjw"]
+
+[ext_resource type="Script" path="res://skin_select.gd" id="1_8dmbk"]
+[ext_resource type="Texture2D" uid="uid://cq17gmqbewcvn" path="res://Assets/GravityBackground.jpg" id="2_v6kic"]
+[ext_resource type="Texture2D" uid="uid://dgchh3xc745k5" path="res://Assets/GravityPlayerMeteor.png" id="3_7c0a7"]
+[ext_resource type="PackedScene" uid="uid://d1074ia854cfd" path="res://Particles/trailMeteor.tscn" id="3_cfepl"]
+[ext_resource type="PackedScene" uid="uid://cf7i1wl8p4tra" path="res://Particles/trailComet.tscn" id="4_13pxy"]
+[ext_resource type="PackedScene" uid="uid://iqv3e4uxiqre" path="res://Particles/trailFire.tscn" id="5_nxe71"]
+[ext_resource type="PackedScene" uid="uid://bdmdievfheirf" path="res://Particles/trailPink.tscn" id="6_23uvo"]
+
+[sub_resource type="Gradient" id="Gradient_appf3"]
+offsets = PackedFloat32Array(0, 0.122302, 0.841727, 0.985611)
+colors = PackedColorArray(0.385493, 0.385492, 0.385492, 0.184314, 0.244776, 0.244776, 0.244776, 0.784314, 0, 0, 0, 0.784314, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ytjd5"]
+gradient = SubResource("Gradient_appf3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m7mpc"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 20.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.1
+scale_max = 0.2
+color_ramp = SubResource("GradientTexture1D_ytjd5")
+
+[sub_resource type="Gradient" id="Gradient_geut6"]
+offsets = PackedFloat32Array(0, 0.122302, 0.841727, 1)
+colors = PackedColorArray(0.45098, 0.658824, 1, 0, 0.0859206, 0.726589, 0.898679, 0.784314, 0, 0.34902, 0.831373, 0.784314, 0, 0.34902, 0.831373, 0.0431373)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_djffi"]
+gradient = SubResource("Gradient_geut6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o7l8t"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 10.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.05
+scale_max = 0.1
+color_ramp = SubResource("GradientTexture1D_djffi")
+
+[sub_resource type="Gradient" id="Gradient_eumvm"]
+offsets = PackedFloat32Array(0, 0.122302, 0.841727, 0.989209)
+colors = PackedColorArray(0.67451, 0.501961, 0.196078, 0, 0.67451, 0.501961, 0.196078, 0.784314, 0.870588, 0.341176, 0.219608, 0.784314, 0.870588, 0.341176, 0.219608, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gw1ca"]
+gradient = SubResource("Gradient_eumvm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m5yac"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 20.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.1
+scale_max = 0.2
+color_ramp = SubResource("GradientTexture1D_gw1ca")
+
+[sub_resource type="Gradient" id="Gradient_nmkwm"]
+offsets = PackedFloat32Array(0, 0.122302, 0.841727, 0.989209)
+colors = PackedColorArray(1, 0.466667, 0.698039, 0.129412, 1, 0.466667, 0.698039, 0.784314, 0.882353, 0, 0.811765, 0.784314, 0.882353, 0, 0.811765, 0.0784314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dmb25"]
+gradient = SubResource("Gradient_nmkwm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gtidu"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 20.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.1
+scale_max = 0.2
+color_ramp = SubResource("GradientTexture1D_dmb25")
+
+[node name="Skin_Select" type="Node2D"]
+script = ExtResource("1_8dmbk")
+
+[node name="GravityBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 359)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("2_v6kic")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 215.0
+offset_right = 1065.0
+offset_bottom = 125.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 70
+text = "SKIN SELECTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Checkmark" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 775.0
+offset_top = 550.0
+offset_right = 900.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 90
+text = "✓"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 190.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 40
+text = "MENU"
+
+[node name="SelectButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 503.0
+offset_top = 550.0
+offset_right = 778.0
+offset_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "SELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = 300.0
+offset_right = 300.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "<
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RightButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1000.0
+offset_top = 300.0
+offset_right = 1100.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = ">"
+metadata/_edit_use_anchors_ = true
+
+[node name="Trails" type="Node2D" parent="."]
+
+[node name="0" parent="Trails" instance=ExtResource("3_cfepl")]
+position = Vector2(640, 360)
+rotation = -1.5708
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_m7mpc")
+
+[node name="1" parent="Trails" instance=ExtResource("4_13pxy")]
+position = Vector2(640, 360)
+rotation = -1.5708
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_o7l8t")
+
+[node name="2" parent="Trails" instance=ExtResource("5_nxe71")]
+position = Vector2(640, 360)
+rotation = -1.5708
+scale = Vector2(2, 2)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_m5yac")
+
+[node name="3" parent="Trails" instance=ExtResource("6_23uvo")]
+position = Vector2(640, 360)
+rotation = -1.5708
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_gtidu")
+
+[node name="Skin" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_7c0a7")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
